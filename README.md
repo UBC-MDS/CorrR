@@ -13,10 +13,10 @@ This project is developed to help users calculate correlation coefficients and c
 
 | Name  | Slack Handle | Github.com | Link |
 | :------: | :---: | :----------: | :---: |
-| KERA YUCEL | `@KERA YUCEL` | `@K3ra-y` | [Kera's link](https://github.com/K3ra-y/Corrpy)|
-| GOPALAKRISHNAN ANDIVEL | `@Krish` | `@Gopsathvik` | [Krish's link](https://github.com/Gopsathvik/CorrPy)|
-| WEISHUN DENG | `@Wilson Deng` | `@xiaoweideng` | [Wilson's link](https://github.com/xiaoweideng/Corrpy)|
-| Mengda Yu | `@Mengda(Albert) Yu` | `@mru4913` | [Albert's link](https://github.com/mru4913/Corrpy) |
+| KERA YUCEL | `@KERA YUCEL` | `@K3ra-y` | [Kera's link](https://github.com/K3ra-y/CorrR)|
+| GOPALAKRISHNAN ANDIVEL | `@Krish` | `@Gopsathvik` | [Krish's link](https://github.com/Gopsathvik/CorrR)|
+| WEISHUN DENG | `@Wilson Deng` | `@xiaoweideng` | [Wilson's link](https://github.com/xiaoweideng/CorrR)|
+| Mengda Yu | `@Mengda(Albert) Yu` | `@mru4913` | [Albert's link](https://github.com/mru4913/CorrR) |
 
 
 # Milestone Progress
