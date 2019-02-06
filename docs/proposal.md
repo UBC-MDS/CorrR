@@ -12,7 +12,7 @@ Standard deviation calculates how close the data points to the mean, in which an
  `std_plus` will omit frustration from workflows.
 
  ```R
- def std_plus(input_data):
+  std_plus(input_data):
    '''
    Standard deviation calculates how close the data
    points are to the mean and the variation of the data points.
@@ -35,7 +35,7 @@ Correlation coefficients calculates the relationship between two variables as we
 <a href="https://www.codecogs.com/eqnedit.php?latex=r&space;=&space;\frac{1}{n-1}(\frac{\sum(x-\overline{x})(y-\overline{y})}{s_{x}s_{y}})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?r&space;=&space;\frac{1}{n-1}(\frac{\sum(x-\overline{x})(y-\overline{y})}{s_{x}s_{y}})" title="r = \frac{1}{n-1}(\frac{\sum(x-\overline{x})(y-\overline{y})}{s_{x}s_{y}})" /></a>
 
 ```R
-def corr_plus(var1, var2):
+corr_plus(var1, var2):
   '''
   Correlation coefficients calculates the relationship between
    two variables as well as the magnitude of this relationship.
@@ -53,6 +53,7 @@ def corr_plus(var1, var2):
 
 
 ## Covariance Matrix (`cov_mx`)
+
 Covariance measures the extent to which corresponding observations from two sets of ordered variables vary in a direction.
 <a href="https://www.codecogs.com/eqnedit.php?latex=Cov(X,Y)&space;=&space;\frac{\sum(x-\overline{x})(y-\overline{y})}{N}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Cov(X,Y)&space;=&space;\frac{\sum(x-\overline{x})(y-\overline{y})}{N}" title="Cov(X,Y) = \frac{\sum(x-\overline{x})(y-\overline{y})}{N}" /></a>
 
@@ -64,9 +65,9 @@ A Covariance matrix displays the variance and covariance together. The diagonal 
 
 
 ```R
-def cov_mx(matrix):
+cov_mx(matrix):
   '''
-  purpose
+  Calculate covariance measures the extent to which corresponding observations from two sets of ordered variables vary in a direction.
 
   parameters:
   -----------
