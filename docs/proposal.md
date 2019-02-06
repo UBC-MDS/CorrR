@@ -76,7 +76,7 @@ def cov_mx(matrix):
   ```
 
 
-### How does `CorrPy` package fits into the R ecosystem?
+### How does `CorrR` package fits into the R ecosystem?
 
 Following functions are already present in R ecosystem. However, missing values are not being handles for the following functions and `CorrR` package will implement calculation of standard deviation, correlation coefficients and covariance matrix.
 
