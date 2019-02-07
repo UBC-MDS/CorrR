@@ -1,4 +1,4 @@
-context("Binding factors")
+context("Test std_plus")
 
 test_that("fbind binds factor (or character)", {
   x <- c('a', 'b')
