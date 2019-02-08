@@ -7,5 +7,5 @@
 #'
 #' @examples
 std_plus <- function(x) {
-
+  message("running std_plus")
 }
