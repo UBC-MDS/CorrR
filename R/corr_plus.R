@@ -8,5 +8,5 @@
 #'
 #' @examples
 corr_plus <- function(x, y){
-  message("running cov_mx")
+  message("running corr_plus")
 }

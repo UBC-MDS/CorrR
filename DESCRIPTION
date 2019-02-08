@@ -2,7 +2,7 @@ Package: CorrR
 Title: A package for calculating correlation coefficients and covariance matrix
 Version: 0.0.0.9000
 Authors@R: person("Mengda (Albert)", "Yu", email = "albertlife4913@gmail.com", role = c("aut", "cre")),
-            person("xxx", "xxx", email = "example@example.com", role = c("aut")),
+            person("xxx", "xxx", email = "example@example.com", role = c("aut"))
 Description: A R package that calculates correlation coefficients and covariance matrix of a given data with missing values
 Depends: R (>= 3.5.1)
 License: MIT + file LICENSE
