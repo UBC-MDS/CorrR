@@ -43,4 +43,21 @@ test_that("Test the ability of handling missing values", {
              && dim(cov_by_r) == dim(cov_by_corr)
              && all(cov_by_r == cov_by_corr))
 
+  bad_matrix <- matrix(c(0.1, 0.03, NA, 0.4, 0.08, 0.22, 0.15, 0.55), 4)
+  nrow_2 <- dim(x)[1]
+  ncols_2 <- dim(x)[2]
+
+  cov_with_r <- cov(bad_matrix, use = "complete.obs")
+  cov_with_corr <- cov_mx(bad_matrix)
+
+  expect_true(is.matrix(cov_with_corr)
+              && is.matrix(cov_with_corr)
+              && dim(cov_with_r) == dim(cov_with_corr)
+              && all(cov_with_r == cov_with_corr))
+
 })
+
+
+
+
+

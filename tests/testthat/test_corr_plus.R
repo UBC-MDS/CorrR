@@ -23,9 +23,21 @@ test_that("Test the correctness of corr_plus",{
   large_x <- c(1000,-2000,3000)
   large_y <- c(-6000,7000,-8000)
 
+  inf_matrix <- matrix(c(0.1, 0.03, Inf, 0.4, 0.08, 0.22, 0.15, 0.55), 4)
+
   expect_true(is.na(corr_plus(zeros_x, multi_x))) # expect TRUE if one of the vectors contains only zeros
   expect_equal(corr_plus(multi_x, multi_y),  -0.9694164) # test if two valid inputs contain some pos and neg values and return the correct output
   expect_equal(corr_plus(large_x, large_y),  -0.9595082) # test if two valid inputs contain some large pos and large neg values and return the correct output
+  expect_equal(
+    (corr_plus(
+      inf_matrix[, 1],
+      inf_matrix[, 2])),
+    (corr_plus(
+      inf_matrix[!rowSums(!is.finite(inf_matrix)),][, 1],
+      inf_matrix[!rowSums(!is.finite(inf_matrix)),][, 2])
+     )
+    )
+
 })
 
 test_that("Test the ability of handling missing values", {
