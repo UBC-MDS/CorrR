@@ -27,6 +27,28 @@ test_that("Test the correctness of the function cov_mc", {
     }
   }
 
+  inf_matrix <- matrix(c(0.1, 0.03, Inf, 0.4, 0.08, 0.22, 0.15, 0.55), 4)
+  nrows <- dim(x)[1]
+  ncols <- dim(x)[2]
+
+  cov_result <- cov_mx(inf_matrix[!rowSums(!is.finite(inf_matrix)),])
+
+  for (i in 1: nrows){
+    for (j in ncols){
+      expect_equal(cov_result[i ,j],
+                   cov(
+                     inf_matrix[!rowSums(!is.finite(inf_matrix)),][, i],
+                     inf_matrix[!rowSums(!is.finite(inf_matrix)),][, j])
+      )
+    }
+  }
+
+
+
+
+
+
+
 })
 
 
@@ -54,6 +76,7 @@ test_that("Test the ability of handling missing values", {
               && is.matrix(cov_with_corr)
               && dim(cov_with_r) == dim(cov_with_corr)
               && all(cov_with_r == cov_with_corr))
+
 
 })
 
