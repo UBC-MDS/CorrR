@@ -29,11 +29,14 @@ test_that("Test the correctness of std_plus", {
   neg_input <- c(-112343, -123, -1234154, -6563)
   pos_input <- c(123,56524676,53245265767,134,54525)
   mix_input <- c(-123,-34,-4,0,134,5426,4555)
+  inf_input <- matrix(c(0.1, 0.03, Inf, 0.4, 0.08, 0.22, 0.15, 0.55), 4)
+
 
   expect_equal(std_plus(zeros), 0) # test if all input are  0 and return the correct output
   expect_equal(std_plus(neg_input), 599450.9) # test if all input are negative and return the correct output
   expect_equal(std_plus(pos_input), 23805693546) # test if all input are positive and return the correct output
   expect_equal(std_plus(mix_input), 2451.842) # test if input contain a mixture of neg, zero, pos numbers and return the correct output
+  expect_equal(std_plus(inf_input[,1]), std_plus(inf_input[!rowSums(!is.finite(inf_input)),])[,1]) # test if input has Inf, treat as missing value
 })
 
 test_that("Test the ability of handling missing values", {
