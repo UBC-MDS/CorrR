@@ -2,22 +2,18 @@
 % Please edit documentation in R/std_plus.R
 \name{std_plus}
 \alias{std_plus}
-\title{Bind two factors}
+\title{`std_plus` function calculates calculates how close the data
+points are to the mean and the variation of the data points.}
 \usage{
-std_plus(a, b)
+std_plus(x)
 }
 \arguments{
-\item{a}{factor}
-
-\item{b}{factor}
+\item{x}{a vector or an array of a random variable}
 }
 \value{
-factor
+the value of standard deviation of the input data
 }
 \description{
-Create a new factor from two existing factors, where the new factor's levels
-are the union of the levels of the input factors.
-}
-\examples{
-std_plus(iris$Species[c(1, 51, 101)], PlantGrowth$group[c(1, 11, 21)])
+`std_plus` function calculates calculates how close the data
+points are to the mean and the variation of the data points.
 }
