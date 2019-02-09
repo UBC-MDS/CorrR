@@ -1,8 +1,9 @@
-#' Title
+#' `std_plus` function calculates calculates how close the data
+#' points are to the mean and the variation of the data points.
 #'
-#' @param x vector
+#' @param x a vector or an array of a random variable
 #'
-#' @return numeric
+#' @return the value of standard deviation of the input data
 #' @export
 #'
 #' @examples

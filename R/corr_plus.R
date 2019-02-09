@@ -1,9 +1,10 @@
-#' Title
+#' `corr_plus` function coefficients calculates the relationship between
+#' two variables as well as the magnitude of this relationship.
 #'
-#' @param x
-#' @param y
+#' @param x a vector or an array of a random variable
+#' @param y a vector or an array of a random variable
 #'
-#' @return
+#' @return a single value correlation between two variables
 #' @export
 #'
 #' @examples
