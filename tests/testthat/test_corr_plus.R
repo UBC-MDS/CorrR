@@ -1,6 +1,6 @@
 context("Test corr_plus")
 
-test_test("Test valid data format",{
+test_that("Test valid data format",{
   single_x <- c(11)
   single_y <- c(22)
   multi_x <- c(1,2,3,4,5)
@@ -16,7 +16,7 @@ test_test("Test valid data format",{
   expect_length(corr_plus(multi_x, multi_y), 1) # expect TRUE if the length of the output is one
 })
 
-test_test("Test the correctness of corr_plus",{
+test_that("Test the correctness of corr_plus",{
   zeros_x <- c(0,0,0,0)
   multi_x <- c(1,-2,3,-4)
   multi_y <- c(-6,7,-8,9)
