@@ -2,18 +2,21 @@
 % Please edit documentation in R/std_plus.R
 \name{std_plus}
 \alias{std_plus}
-\title{`std_plus` function calculates calculates how close the data
-points are to the mean and the variation of the data points.}
+\title{Standard Deviation}
 \usage{
 std_plus(x)
 }
 \arguments{
-\item{x}{a vector or an array of a random variable}
+\item{x}{(numeric) a numeric vector}
 }
 \value{
 the value of standard deviation of the input data
 }
 \description{
-`std_plus` function calculates calculates how close the data
-points are to the mean and the variation of the data points.
+`std_plus` function calculates the standard deviation of the values in a numeric vector. It is capable of computing
+standard deviation when the vector contains missing values and inifinite values by automatically removing them.
+}
+\examples{
+std_plus(c(1,2,3,4,5))
+std_plus(c(1,2,3,NA,5))
 }
