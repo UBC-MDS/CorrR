@@ -22,7 +22,6 @@ test_that("Test the correctness of corr_plus",{
   multi_y <- c(-6,7,-8,9)
   large_x <- c(1000,-2000,3000)
   large_y <- c(-6000,7000,-8000)
-
   inf_matrix <- matrix(c(0.1, 0.03, Inf, 0.4, 0.08, 0.22, 0.15, 0.55), 4)
 
   expect_true(is.na(corr_plus(zeros_x, multi_x))) # expect TRUE if one of the vectors contains only zeros
