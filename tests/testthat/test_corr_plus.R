@@ -26,8 +26,8 @@ test_that("Test the correctness of corr_plus",{
   inf_matrix <- matrix(c(0.1, 0.03, Inf, 0.4, 0.08, 0.22, 0.15, 0.55), 4)
 
   expect_true(is.na(corr_plus(zeros_x, multi_x))) # expect TRUE if one of the vectors contains only zeros
-  expect_equal(corr_plus(multi_x, multi_y),  -0.9694164) # test if two valid inputs contain some pos and neg values and return the correct output
-  expect_equal(corr_plus(large_x, large_y),  -0.9595082) # test if two valid inputs contain some large pos and large neg values and return the correct output
+  expect_equal(corr_plus(multi_x, multi_y),  cor(multi_x,multi_y, use = "complete.obs")) # test if two valid inputs contain some pos and neg values and return the correct output
+  expect_equal(corr_plus(large_x, large_y),  cor(large_x,large_y, use = "complete.obs")) # test if two valid inputs contain some large pos and large neg values and return the correct output
   expect_equal(
     (corr_plus(
       inf_matrix[, 1],
@@ -40,10 +40,11 @@ test_that("Test the correctness of corr_plus",{
 
 })
 
+
 test_that("Test the ability of handling missing values", {
   missing_x <- c(1,2,3,4,5,6,7, NA)
   missing_y <- c(2,3,4,5,NA,1,3,4)
 
   expect_equal(corr_plus(missing_x, missing_x), 1) # test if the function handles the missing values and return the correct output
-  expect_equal(corr_plus(missing_x, missing_y), -0.1220935) # test if the function handles the missing values and return the correct output
+  expect_equal(corr_plus(missing_x, missing_y), cor(missing_x,missing_y, use = "complete.obs")) # test if the function handles the missing values and return the correct output
 })
