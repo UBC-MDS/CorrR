@@ -2,7 +2,7 @@ context("Test std_plus")
 
 test_that("Test valid data type", {
 
-  character_input <- c("1234",5,6,7)
+  character_input <- c("1234","cool", 5,6,7)
   v <- 2 + 5i
   complex_input <- c(v, v)
   bool_input <- c(TRUE, TRUE, FALSE)
@@ -33,10 +33,10 @@ test_that("Test the correctness of std_plus", {
 
 
   expect_equal(std_plus(zeros), 0) # test if all input are  0 and return the correct output
-  expect_equal(std_plus(neg_input), 599450.9) # test if all input are negative and return the correct output
-  expect_equal(std_plus(pos_input), 23805693546) # test if all input are positive and return the correct output
-  expect_equal(std_plus(mix_input), 2451.842) # test if input contain a mixture of neg, zero, pos numbers and return the correct output
-  expect_equal(std_plus(inf_input[,1]), std_plus(inf_input[!rowSums(!is.finite(inf_input)),])[,1]) # test if input has Inf, treat as missing value
+  expect_equal(std_plus(neg_input), sd(neg_input)) # test if all input are negative and return the correct output
+  expect_equal(std_plus(pos_input), sd(pos_input)) # test if all input are positive and return the correct output
+  expect_equal(std_plus(mix_input), sd(mix_input)) # test if input contain a mixture of neg, zero, pos numbers and return the correct output
+  expect_equal(std_plus(inf_input[,1]), std_plus(inf_input[!rowSums(!is.finite(inf_input)),][,1])) # test if input has Inf, treat as missing value
 })
 
 test_that("Test the ability of handling missing values", {
@@ -45,3 +45,4 @@ test_that("Test the ability of handling missing values", {
 
   expect_equal(std_plus(with_missing), std_plus(without_missing)) # expect to be equal with or without missing values
 })
+

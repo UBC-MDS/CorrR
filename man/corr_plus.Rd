@@ -2,20 +2,23 @@
 % Please edit documentation in R/corr_plus.R
 \name{corr_plus}
 \alias{corr_plus}
-\title{`corr_plus` function coefficients calculates the relationship between
-two variables as well as the magnitude of this relationship.}
+\title{Correlation}
 \usage{
 corr_plus(x, y)
 }
 \arguments{
-\item{x}{a vector or an array of a random variable}
+\item{x}{a numeric vector}
 
-\item{y}{a vector or an array of a random variable}
+\item{y}{a numeric vector}
 }
 \value{
-a single value correlation between two variables
+the value of standard deviation of the input data
 }
 \description{
-`corr_plus` function coefficients calculates the relationship between
-two variables as well as the magnitude of this relationship.
+`corr_plus` function calculates the Pearson correlation coefficient between
+two variables using complete case analysis that excludes all observations
+that have NA for at least one variable.
+}
+\examples{
+corr_plus(c(1,2,3,4,5), c(1,2,3,NA,5))
 }
