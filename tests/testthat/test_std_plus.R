@@ -45,3 +45,4 @@ test_that("Test the ability of handling missing values", {
 
   expect_equal(std_plus(with_missing), std_plus(without_missing)) # expect to be equal with or without missing values
 })
+

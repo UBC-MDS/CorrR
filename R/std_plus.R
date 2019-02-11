@@ -18,7 +18,7 @@ std_plus <- function(x) {
   if(is.null(x)){# The input vector cannot be null
     stop("The input cannot be empty")
   }
-  if(is.character(x) || is.complex(x)){ # the input type cannot be character, complex
+  if(!(is.numeric(x) || is.logical(x))){ # the input data should be numeric
     return (NA)
   }
   if (length(x) <= 1L){ # The length of input should be greater than 1
@@ -28,9 +28,8 @@ std_plus <- function(x) {
   # transform x which is coercible to one
   x <- if (is.vector(x) || is.factor(x)) x else as.double(x)
 
-  # treat infinite values as missing values
-  is_inf <- is.infinite(x)
-  x <- x[!is_inf]
+  # treat infinite values as missing values and remove them
+  x <- x[!is.infinite(x)]
 
   # remove missing values
   x <- x[!is.na(x)]
