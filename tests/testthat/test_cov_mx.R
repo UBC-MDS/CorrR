@@ -33,7 +33,7 @@ test_that("Test the correctness of the function cov_mc", {
   ncols <- dim(x)[2]
   # implements cov_mx for testting
   cov_result <- cov_mx(inf_matrix[!rowSums(!is.finite(inf_matrix)),])
-  # Check isf cov results matches with cov_mx
+  # Check if cov results matches with cov_mx
   for (i in 1: nrows){
     for (j in ncols){
       expect_equal(cov_result[i ,j],
