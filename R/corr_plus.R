@@ -42,7 +42,7 @@ corr_plus <- function(x, y){
   y[is.infinite(y)] <- NA
 
   # remove missing values
-  nas <- attr(na.omit(cbind(x,y)), "na.action")
+  nas <- attr(stats::na.omit(cbind(x,y)), "na.action")
   if (length(nas)){
     x <- x[-nas]
     y <- y[-nas]
