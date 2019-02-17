@@ -42,8 +42,25 @@ cov_mx <- function(x){
     stop("'x' must be 2D matrix")
   }
 
+  #remove the rows that missing value or finite are present
+  z <- x[!rowSums(!is.finite(x)), ]
+  z <- x[!rowSums(!is.na(x)), ]
 
+  # check if the matrix is empty after removing inf and nan
+  if (is.null(x)){
+    stop("Input cannot be empty.")
+  }
 
+  # calculate covariance matrix
+  X = x
+  X = t(X)
+  N = nrow(X)
+  x_mean = apply(X, 2, mean)
+  X = X - x_mean
+  dot_product <- t(X) %*% Conj(X)
+  Z = dot_product / (N-1)
+
+  return(Z)
 
 
 }
