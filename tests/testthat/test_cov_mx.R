@@ -19,7 +19,7 @@ test_that("Test valid data format",{
   expect_error(cov_mx(char_x))
 })
 
-test_that("Test the correctness of the function cov_mc", {
+test_that("Test the correctness of the function cov_mx", {
   good_x <- matrix(c(-2,-1,0,1,2,1.5,2,0,1,2,4,2,0,1,2), 5)
   nrows <- dim(x)[1]
   ncols <- dim(x)[2]
