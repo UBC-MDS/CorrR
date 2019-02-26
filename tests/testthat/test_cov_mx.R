@@ -19,7 +19,7 @@ test_that("Test valid data format",{
   expect_error(cov_mx(char_x))
 })
 
-test_that("Test the correctness of the function cov_mc", {
+test_that("Test the correctness of the function cov_mx", {
   good_x <- matrix(c(-2,-1,0,1,2,1.5,2,0,1,2,4,2,0,1,2), 5)
   nrows <- dim(x)[1]
   ncols <- dim(x)[2]
@@ -32,28 +32,6 @@ test_that("Test the correctness of the function cov_mc", {
       expect_equal(good_cov_result[i,j], cov(good_x[,i], good_x[,j]))
     }
   }
-
-  # test for inf value in a matrix
-  inf_matrix <- matrix(c(0.1, 0.03, Inf, 0.4, 0.08, 0.22, 0.15, 0.55), 4)
-  nrows <- dim(x)[1]
-  ncols <- dim(x)[2]
-  # implements cov_mx for testting
-  cov_result <- cov_mx(inf_matrix[!rowSums(!is.finite(inf_matrix)),])
-  # Check if cov results matches with cov_mx
-  for (i in 1: nrows){
-    for (j in ncols){
-      expect_equal(cov_result[i ,j],
-                   cov(
-                     inf_matrix[!rowSums(!is.finite(inf_matrix)),][, i],
-                     inf_matrix[!rowSums(!is.finite(inf_matrix)),][, j])
-      )
-    }
-  }
-
-
-
-
-
 
 
 })
@@ -85,7 +63,34 @@ test_that("Test the ability of handling missing values", {
               && all(cov_with_r == cov_with_corr))
 
 
+
+
 })
+
+
+
+test_that("Test the ability of handling finite values", {
+
+
+    # test for inf value in a matrix
+    inf_matrix <- matrix(c(0.1, 0.03, Inf, 0.4, 0.08, 0.22, 0.15, 0.55), 4)
+    nrows <- dim(x)[1]
+    ncols <- dim(x)[2]
+    # implements cov_mx for testting
+    cov_result <- cov_mx(inf_matrix[!rowSums(!is.finite(inf_matrix)),])
+    # Check if cov results matches with cov_mx
+    for (i in 1: nrows){
+      for (j in ncols){
+        expect_equal(cov_result[i ,j],
+                     cov(
+                       inf_matrix[!rowSums(!is.finite(inf_matrix)),][, i],
+                       inf_matrix[!rowSums(!is.finite(inf_matrix)),][, j])
+        )
+      }
+    }
+
+})
+
 
 
 

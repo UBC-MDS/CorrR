@@ -32,24 +32,22 @@ test_that("Test valid data format", {
   expect_length(std_plus(multi_input), 1)
 })
 
+
 test_that("Test the correctness of std_plus", {
   zeros <- c(0,0,0,0,0)
-  neg_input <- c(-112343, -123, -1234154, -6563)
-  pos_input <- c(123,56524676,53245265767,134,54525)
+  negative_input <- c(-112343, -123, -1234154, -6563)
+  positive_input <- c(123,56524676,53245265767,134,54525)
   mix_input <- c(-123,-34,-4,0,134,5426,4555)
-  inf_input <- matrix(c(0.1, 0.03, Inf, 0.4, 0.08, 0.22, 0.15, 0.55), 4)
 
   # test if all input are  0 and return the correct output
   expect_equal(std_plus(zeros), 0)
   # test if all input are negative and return the correct output
-  expect_equal(std_plus(neg_input), sd(neg_input))
+  expect_equal(std_plus(negative_input), sd(negative_input))
   # test if all input are positive and return the correct output
-  expect_equal(std_plus(pos_input), sd(pos_input))
+  expect_equal(std_plus(positive_input), sd(positive_input))
   # test if input contain a mixture of negative, zero, positive numbers and return the correct output
   expect_equal(std_plus(mix_input), sd(mix_input))
-  # test if input has Inf, treat as missing value
-  expect_equal(std_plus(inf_input[,1]), std_plus(inf_input[!rowSums(!is.finite(inf_input)),][,1]))
-})
+  })
 
 test_that("Test the ability of handling missing values", {
   with_missing <- c(1,2,3,4,5,6,7, NA)
@@ -57,5 +55,14 @@ test_that("Test the ability of handling missing values", {
 
   # expect to be equal with or without missing values
   expect_equal(std_plus(with_missing), std_plus(without_missing))
+})
+
+
+test_that("Test the ability of handling finite values", {
+  inf_input <- matrix(c(0.1, 0.03, Inf, 0.4, 0.08, 0.22, 0.15, 0.55), 4)
+
+  # test if input has Inf, treat as missing value
+  expect_equal(std_plus(inf_input[,1]),
+               std_plus(inf_input[!rowSums(!is.finite(inf_input)),][,1]))
 })
 
