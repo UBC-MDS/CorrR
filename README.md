@@ -37,3 +37,4 @@ A Covariance matrix displays the variance and covariance together. This function
 | Milestone | Tasks |
 |---|---|
 |Milestone 1 | [Proposal](https://github.com/UBC-MDS/CorrR/blob/master/docs/proposal.md)|
+|Milestone 3 | [Release](!)|
