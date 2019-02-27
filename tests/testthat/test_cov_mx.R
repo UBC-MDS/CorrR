@@ -8,7 +8,7 @@ test_that("Test valid data format",{
   char_x <- as.character(x)
 
   # expect NA if we have a single row in the input matrix
-  expect_true(is.na(cov_mx(single_row_x)[1,1]))
+  expect_true(is.na(cov_mx(single_row_x)))
   # expect the covariance matrix has the same number of rows as the number of features of input matrix
   expect_equal(dim(cov_mx(x))[1], nrows)
   # expect the covariance matrix has the same number of cols as the number of features of input matrix
@@ -21,15 +21,15 @@ test_that("Test valid data format",{
 
 test_that("Test the correctness of the function cov_mx", {
   good_x <- matrix(c(-2,-1,0,1,2,1.5,2,0,1,2,4,2,0,1,2), 5)
-  nrows <- dim(x)[1]
-  ncols <- dim(x)[2]
+  nrows <- dim(good_x)[1]
+  ncols <- dim(good_x)[2]
 
   good_cov_result <- cov_mx(good_x)
 
   # expect TRUE for all covariance in the matrix
   for (i in 1:nrows){
     for(j in 1:ncols){
-      expect_equal(good_cov_result[i,j], cov(good_x[,i], good_x[,j]))
+      expect_equal(good_cov_result[i,j], cov(good_x[,j], good_x[,i]))
     }
   }
 

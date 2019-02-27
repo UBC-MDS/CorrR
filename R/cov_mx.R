@@ -35,11 +35,12 @@ cov_mx <- function(x){
   }
 
   # return error if matrix is not 2D
-  if (dim(x)[2] == 1){
-    stop("'x' must be 2D matrix")
+  if (length(dim(x)) != 2){
+    return (NA)
   }
-  else if (dim(x)[2] > 2){
-    stop("'x' must be 2D matrix")
+
+  if (dim(x)[1] == 1 | dim(x)[2] == 1){
+    return (NA)
   }
 
   #remove the rows that missing value or finite are present
@@ -52,15 +53,23 @@ cov_mx <- function(x){
   }
 
   # calculate covariance matrix
-  X = x
-  X = t(X)
-  N = nrow(X)
-  x_mean = apply(X, 2, mean)
-  X = X - x_mean
+  X <-  x
+  N <- ncol(X)
+  X <-  X - rowMeans(X)
   dot_product <- t(X) %*% Conj(X)
-  Z = dot_product / (N-1)
+  Z <- dot_product #/ (N-1)
 
   return(Z)
+
+ ###   # calculate covariance matrix
+ ###   X = m.copy()
+ ###   X = X.T
+ ###   N = X.shape[0]
+ ###   X = X - X.mean(axis = 0)
+ ###   C = np.dot(X.T, X.conj()) / (N-1) # degree of freedom
+ ###
+ ###   return C
+
 
 
 }
