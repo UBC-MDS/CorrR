@@ -10,9 +10,9 @@ test_that("Test valid data format",{
   # expect NA if we have a single row in the input matrix
   expect_true(is.na(cov_mx(single_row_x)[1,1]))
   # expect the covariance matrix has the same number of rows as the number of features of input matrix
-  expect_equal(dim(cov_mx(x))[1], ncols)
+  expect_equal(dim(cov_mx(x))[1], nrows)
   # expect the covariance matrix has the same number of cols as the number of features of input matrix
-  expect_equal(dim(cov_mx(x))[2], ncols)
+  expect_equal(dim(cov_mx(x))[2], nrows)
   # expect a matrix output
   expect_true(is.matrix(cov_mx(x)))
   # expect ERROR if the input matrix is not numeric
