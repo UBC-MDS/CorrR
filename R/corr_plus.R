@@ -9,7 +9,7 @@
 #' @param x a numeric vector
 #' @param y a numeric vector
 #'
-#' @return the value of standard deviation of the input data
+#' @return the value of Pearson correlation coefficient value of the input data
 #' @export
 #'
 #' @examples corr_plus(c(1,2,3,4,5), c(1,2,3,NA,5))
