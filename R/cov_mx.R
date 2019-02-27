@@ -34,7 +34,7 @@ cov_mx <- function(x){
     return (NA)
   }
 
-  # return error if matrix is not 2D
+  # return NA if matrix is not 2D
   if (length(dim(x)) != 2){
     return (NA)
   }
@@ -45,31 +45,20 @@ cov_mx <- function(x){
 
   #remove the rows that missing value or finite are present
   z <- x[!rowSums(!is.finite(x)), ]
-  z <- x[!rowSums(!is.na(x)), ]
+  z <- na.omit(z)
 
   # check if the matrix is empty after removing inf and nan
-  if (is.null(x)){
+  if (is.null(z)){
     stop("Input cannot be empty.")
   }
 
   # calculate covariance matrix
-  X <-  x
-  N <- ncol(X)
-  X <-  X - rowMeans(X)
+  X <-  z
+  N <- nrow(X)
+  X <- sweep(X, 2, colMeans(z), `-`)
   dot_product <- t(X) %*% Conj(X)
-  Z <- dot_product #/ (N-1)
+  Z <- dot_product / (N-1)
 
   return(Z)
-
- ###   # calculate covariance matrix
- ###   X = m.copy()
- ###   X = X.T
- ###   N = X.shape[0]
- ###   X = X - X.mean(axis = 0)
- ###   C = np.dot(X.T, X.conj()) / (N-1) # degree of freedom
- ###
- ###   return C
-
-
 
 }
