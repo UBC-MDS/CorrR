@@ -2,8 +2,7 @@
 % Please edit documentation in R/cov_mx.R
 \name{cov_mx}
 \alias{cov_mx}
-\title{`cov_mx` function calculates the covariance matrix of the two
- variables and automatically deals with the missing value}
+\title{Covariance matrix}
 \usage{
 cov_mx(x)
 }
@@ -11,9 +10,13 @@ cov_mx(x)
 \item{x}{a matrix that contains one or more than one random variable}
 }
 \value{
-matrix that contains the covariance between random variables in the input matrix
+z matrix that contains the covariance between random
+variables in the input matrix
 }
 \description{
 `cov_mx` function calculates the covariance matrix of the two
  variables and automatically deals with the missing value
+}
+\examples{
+cov_mx(matrix(c(1, 2, NA, 4, 5, 6, 7, 8), 4))
 }
