@@ -26,6 +26,22 @@ This project is developed to help users calculate correlation coefficients and c
 
 `devtools::install_github("CorrR")`
 
+## Branch Coverage Test
+
+To test branch coverage, we use `covr` package. You can install by `install.packages("covr")`.
+
+You can double click the project and include the following in the command.
+
+```
+library(covr)
+
+report()
+```
+
+The results are shown below.
+
+![alt text](./docs/branch_covr.png)
+
 ## Functions
 
 ### Standard Deviation (`std_plus`)
