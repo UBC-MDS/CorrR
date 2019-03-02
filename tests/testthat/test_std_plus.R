@@ -10,6 +10,8 @@ test_that("Test valid data type", {
 
   # return error if the input is empty
   expect_error(std_plus())
+  # return error if the input is NULL
+  expect_error(std_plus(NULL))
   # expect NA if the input type is char
   expect_true(is.na(std_plus(character_input)))
   # expect NA if the input type is complex
