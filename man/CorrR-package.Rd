@@ -10,7 +10,14 @@ A R package that calculates correlation coefficients and covariance matrix of a 
              The package contains std_plus, corr_plus and cov_mx.
 }
 \author{
-\strong{Maintainer}: Mengda (Albert) Yu \email{albertlife4913@gmail.com}
+\strong{Maintainer}: YUCEL KERA \email{xxxx@gmail.com}
+
+Authors:
+\itemize{
+  \item ANDIVEL GOPALAKRISHNAN \email{xxxx@gmail.com}
+  \item DENG WEISHUN \email{xxxx@gmail.com}
+  \item MENGDA YU \email{xxxx@gmail.com}
+}
 
 }
 \keyword{internal}
