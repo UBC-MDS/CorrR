@@ -23,10 +23,7 @@ corr_plus <- function(x, y){
   stopifnot(is.atomic(x))
   if(!(is.numeric(y) || is.logical(y))) stop("'y' must be numeric") # the input data should be numeric
   stopifnot(is.atomic(y))
-  if(length(x) == 0L || length(y) == 0L){ # return ERROR if the inputs are empty
-    stop("both 'x' and 'y' must be non-empty")
-  }
-  else if (length(x) == 1L || length(y) == 1L){ # return NA if The length of input equal to 1
+  if (length(x) == 1L || length(y) == 1L){ # return NA if The length of input equal to 1
     return (NA)
   }
   if (length(x) != length(y)){
