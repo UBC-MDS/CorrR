@@ -9,6 +9,7 @@ test_that("Test valid data format",{
 
   # expect NA if we have a single row in the input matrix
   expect_true(is.na(cov_mx(single_row_x)))
+  expect_true(is.na(cov_mx(matrix(c(1)))))
   # expect the covariance matrix has the same number of rows as the number of features of input matrix
   expect_equal(dim(cov_mx(x))[1], ncols)
   # expect the covariance matrix has the same number of cols as the number of features of input matrix
@@ -17,6 +18,8 @@ test_that("Test valid data format",{
   expect_true(is.matrix(cov_mx(x)))
   # expect ERROR if the input matrix is not numeric
   expect_error(cov_mx(char_x))
+  # expect ERROR if the input matrix is NULL
+  expect_error(cov_mx(NULL))
 })
 
 test_that("Test the correctness of the function cov_mx", {
@@ -64,6 +67,9 @@ test_that("Test the ability of handling missing values", {
               && dim(cov_with_r) == dim(cov_with_corr)
               && all(cov_with_r == cov_with_corr))
 
+  # create a matrix a full of na and inf
+  bad_x2 <- matrix(c(NA, NA, Inf, Inf), 2)
+  expect_error(cov_mx(bad_x2))
 })
 
 
