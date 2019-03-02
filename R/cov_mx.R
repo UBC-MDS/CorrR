@@ -35,7 +35,7 @@ cov_mx <- function(x){
 
   # remove the rows that missing value or finite are present
   z <- x[!rowSums(!is.finite(x)), ]
-  z <- na.omit(z)
+  z <- stats::na.omit(z)
 
   # check if the matrix is empty after removing inf and nan
   if (!length(z)){
