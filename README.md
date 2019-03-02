@@ -24,7 +24,7 @@ This project is developed to help users calculate correlation coefficients and c
 
 `CorrR` can be installed in a R command window:
 
-`devtools::install_github("CorrR")`
+`devtools::install_github("UBC-MDS/CorrR")`
 
 ## Branch Coverage Test
 
