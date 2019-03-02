@@ -4,7 +4,7 @@ Version: 0.0.0.9000
 Authors@R: c(person("YUCEL", "KERA", email = "yucel.kera@gmail.com", role = c("aut", "cre")), 
   person("ANDIVEL", "GOPALAKRISHNAN", email = "xxxx@gmail.com", role = c("aut")), 
   person("DENG", "WEISHUN", email = "dengweishun@hotmail.com", role = c("aut")), 
-  person("MENGDA", "YU", email = "xxxx@gmail.com", role = c("aut")))
+  person("MENGDA", "YU", email = "albert@gmail.com", role = c("aut")))
 Description: A R package that calculates correlation coefficients and covariance matrix of a given data with missing values. 
              The package contains std_plus, corr_plus and cov_mx.
 Depends: R (>= 3.5.0)
