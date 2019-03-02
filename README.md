@@ -24,7 +24,11 @@ This project is developed to help users calculate correlation coefficients and c
 
 `CorrR` can be installed in a R command window:
 
-`devtools::install_github("CorrR")`
+`devtools::install_github("CorrR")` 
+
+`CorrR` can be installed from terminal:
+
+`pip install git+https://github.com/UBC-MDS/CorrR.git`
 
 ## Functions
 
