@@ -34,8 +34,8 @@ test_that("Test the correctness of the function cov_mx", {
 
 test_that("Test the ability of handling missing values", {
   bad_x <- matrix(c(-2,-1,0,NA,2,1.5,2,NA,1,2,4,2,0,1,2), 5)
-  nrows <- dim(x)[1]
-  ncols <- dim(x)[2]
+  nrows <- dim(bad_x)[1]
+  ncols <- dim(bad_x)[2]
 
   # covariance matrix with R base
   cov_by_r <- cov(bad_x, use = "complete.obs")
@@ -50,8 +50,8 @@ test_that("Test the ability of handling missing values", {
 
   # create a matrix with NAs
   bad_matrix <- matrix(c(0.1, 0.03, NA, 0.4, 0.08, 0.22, 0.15, 0.55), 4)
-  nrow_2 <- dim(x)[1]
-  ncols_2 <- dim(x)[2]
+  nrow_2 <- dim(bad_matrix)[1]
+  ncols_2 <- dim(bad_matrix)[2]
 
   # covarience matrix with R base
   cov_with_r <- cov(bad_matrix, use = "complete.obs")
@@ -72,8 +72,8 @@ test_that("Test the ability of handling finite values", {
 
     # test for inf value in a matrix
     inf_matrix <- matrix(c(0.1, 0.03, Inf, 0.4, 0.08, 0.22, 0.15, 0.55), 4)
-    nrows <- dim(x)[1]
-    ncols <- dim(x)[2]
+    nrows <- dim(inf_matrix)[1]
+    ncols <- dim(inf_matrix)[2]
 
     # implements cov_mx for testting
     cov_result <- cov_mx(inf_matrix[!rowSums(!is.finite(inf_matrix)),])
