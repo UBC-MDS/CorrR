@@ -1,21 +1,21 @@
 Package: CorrR
 Title: A package for calculating correlation coefficients and covariance matrix
 Version: 0.0.0.9000
-Authors@R: c(person("YUCEL", "KERA", email = "yucel.kera@gmail.com", role = c("aut", "cre")), 
-  person("ANDIVEL", "GOPALAKRISHNAN", email = "gopsathvik@gmail.com", role = c("aut")), 
-  person("DENG", "WEISHUN", email = "dengweishun@hotmail.com", role = c("aut")), 
-  person("MENGDA", "YU", email = "albert@gmail.com", role = c("aut")))
-Description: A R package that calculates correlation coefficients and covariance matrix of a given data with missing values. 
+Authors@R: c(person("ANDIVEL", "GOPALAKRISHNAN", email = "gopsathvik@gmail.com", role = c("aut")),
+  person("DENG", "WEISHUN", email = "dengweishun@hotmail.com", role = c("aut")),
+  person("MENGDA", "YU", email = "albert@gmail.com", role = c("aut")),
+  person("YUCEL", "KERA", email = "yucel.kera@gmail.com", role = c("aut", "cre")))
+Description: A R package that calculates correlation coefficients and covariance matrix of a given data with missing values.
              The package contains std_plus, corr_plus and cov_mx.
 Depends: R (>= 3.5.0)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
-Suggests: 
+Suggests:
     testthat,
     knitr,
     rmarkdown
-Imports: 
+Imports:
     stats
 VignetteBuilder: knitr

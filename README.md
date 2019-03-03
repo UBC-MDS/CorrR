@@ -6,19 +6,19 @@ Latest Update Date: 2019 Feb.
 
 # Overview
 
-This project is developed to help users calculate correlation coefficients and covariance matrix of a given data with missing values in both R and Python.
+This project is developed to help users calculate standard deviation, correlation coefficients and covariance matrix of a given data with missing values in both R and Python.
 
 - [Python Version Link](https://github.com/UBC-MDS/CorrPy)
 - [R Version Link](https://github.com/UBC-MDS/CorrR)
 
 # Team
 
-| Name  | Slack Handle | Github.com | Link |
+| Name  | Slack Handle | Github.com | Project branch |
 | :------: | :---: | :----------: | :---: |
-| KERA YUCEL | `@KERA YUCEL` | `@K3ra-y` | [Kera's link](https://github.com/K3ra-y/CorrR)|
-| GOPALAKRISHNAN ANDIVEL | `@Krish` | `@Gopsathvik` | [Krish's link](https://github.com/Gopsathvik/CorrR)|
-| WEISHUN DENG | `@Wilson Deng` | `@xiaoweideng` | [Wilson's link](https://github.com/xiaoweideng/CorrR)|
-| Mengda Yu | `@Mengda(Albert) Yu` | `@mru4913` | [Albert's link](https://github.com/mru4913/CorrR) |
+| KERA YUCEL | `@KERA YUCEL` | [`@K3ra-y`](https://github.com/K3ra-y) | [Kera's link](https://github.com/UBC-MDS/CorrR/tree/Kera)|
+| GOPALAKRISHNAN ANDIVEL | `@Krish` | [`@Gopsathvik`](https://github.com/GopsathvikM) | [Krish's link](https://github.com/UBC-MDS/CorrR/tree/krish)|
+| WEISHUN DENG | `@Wilson Deng` | [`@xiaoweideng`](https://github.com/xiaoweideng) | [Wilson's link](https://github.com/UBC-MDS/CorrR/tree/wilso)|
+| Mengda Yu | `@Mengda(Albert) Yu` | [`@mru4913`](https://github.com/mru4913) | [Albert's link](https://github.com/UBC-MDS/CorrR/tree/Albert) |
 
 ## Installation
 
@@ -32,7 +32,7 @@ To test branch coverage, we use `covr` package. You can install by `install.pack
 
 You can double click the project and include the following in the command.
 
-```
+```R
 library(covr)
 
 report()
@@ -41,6 +41,22 @@ report()
 The results are shown below.
 
 ![alt text](./docs/branch_covr.png)
+
+## Executing `test_that` tests in `CorrR`
+
+To test the test coverage, we use `devtools` package. Installation of this package can be done by `install.packages("devtools")`.
+
+You can open the `CorrR` R project and execute the following code.
+
+```R
+library(devtools)
+load_all()
+test()
+```
+
+The results are shown below.
+
+![alt text](./docs/test.jpg)
 
 ## Functions
 
