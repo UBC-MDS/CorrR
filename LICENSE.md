@@ -1,6 +1,7 @@
 # MIT License
 
-Copyright (c) 2019 Mengda(Albert) Yu
+Copyright (c) 2019 Gopalakrishnan Andivel, Weishun Deng,	Mengda(Albert) Yu, Kera Yucel
+
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
