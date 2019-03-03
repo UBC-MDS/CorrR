@@ -1,6 +1,6 @@
 ---
 title: "corr_plus"
-author: "Mengda Yu"
+author: "Vignette Author"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
