@@ -44,7 +44,7 @@ The results are shown below.
 
 ## Executing `test_that` tests in `CorrR`
 
-To test test coverage, we use `devtools` package. Installation of this package can be done by `install.packages("devtools")`.
+To test the test coverage, we use `devtools` package. Installation of this package can be done by `install.packages("devtools")`.
 
 You can open the `CorrR` R project and execute the following code.
 
