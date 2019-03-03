@@ -1,6 +1,6 @@
 ---
-title: "Vignette Title"
-author: "Vignette Author"
+title: "cov_mx"
+author: "KERA YUCEL"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
@@ -16,50 +16,25 @@ knitr::opts_chunk$set(
 )
 ```
 
-Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
+# Overview
 
-- Never uses retina figures
-- Has a smaller default figure size
-- Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style
+This package is developed to help users calculate correlation coefficients and covariance matrix of a given data with missing values. In order to implement correlation coefficients and covariance matrix, the standard deviation of the data is needed however the world of data is not always clean and tidy. `base` R fails to return standard deviation and calculation of the correlation coefficients when the data has missing values. This package aims to overcome this obstacle and help users handle missing values when calculating correlation coefficients and covariance matrix. `CorrR` uses likewise deletion method to handle missing values: removing the rows of a data frame where the missing values are present.
 
-## Vignette Info
+# Covariance Matrix (cov_mx)
 
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
+A Covariance matrix displays the variance and covariance together. This function would use the above two functions.
 
-## Styles
+$$Cov(X,Y) = \frac{\sum(x-\overline{x})(y-\overline{y})}{N} $$
 
-The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
+# Function 
 
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
+`cov_mx` function calculates the covariance matrix of the two variables and automatically deals with the missing value
 
-## Figures
-
-The figure sizes have been customised so that you can easily put two images side-by-side. 
-
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
-```
-
-You can enable figure captions by `fig_caption: yes` in YAML:
-
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
-
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
-
-## More Examples
-
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
-
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
-```
-
-Also a quote using `>`:
-
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))
+- INPUT
+    - x a matrix that contains one or more than one random variable
+  
+- OUTPUT 
+    - z matrix that contains the covariance between random variables in the input matrix
+  
+- EXAMPLE
+    - cov_mx(matrix(c(1, 2, NA, 4, 5, 6, 7, 8), 4))
