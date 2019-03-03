@@ -151,3 +151,5 @@ Following functions are already present in R ecosystem. However, missing values 
 | Milestone | Tasks |
 |---|---|
 |Milestone 1 | [Proposal](https://github.com/UBC-MDS/CorrR/blob/master/docs/proposal.md)|
+|Milestone 2 | [Python package (`CorrPy`) is complete](https://github.com/UBC-MDS/CorrPy)|
+|Milestone 3 | [R package (`CorrR`) is complete](https://github.com/UBC-MDS/CorrR)|
