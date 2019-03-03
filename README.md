@@ -59,6 +59,13 @@ Standard deviation calculates how close the data points to the mean, in which an
 ### *Example*:
 
 ```R
+> x <-  c(1,2, NA, 4, NA, 6)
+> std_plus(x)
+[1] 2.217356
+
+> y <-  c(1,2, Inf, 4, NA, 6)
+> std_plus(y)
+[1] 2.217356
 ```
 
 
@@ -76,6 +83,10 @@ Correlation coefficients calculates the relationship between two variables as we
 ### *Example*:
 
 ```R
+> x <-  c(1, 2, NA, 4, 5)
+> y <-  c(-6, -7, -8, 9, TRUE)
+> corr_plus(x, y)
+[1] 0.7391091
 ```
 
 
@@ -99,6 +110,11 @@ A covariance matrix displays the variance and covariance together. The diagonal 
 ### *Example*:
 
 ```R
+> foo_matrix <- matrix(c(1, 2, NA, 4, 5, -6, -7, -8, 9, TRUE), 5)
+> cov_mx(foo_matrix)
+          [,1]     [,2]
+[1,]  3.333333 10.00000
+[2,] 10.000000 54.91667
 ```
 
 ### How does `CorrR` package fits into the R ecosystem?
