@@ -105,4 +105,3 @@ Following functions are already present in R ecosystem. However, missing values 
 | Milestone | Tasks |
 |---|---|
 |Milestone 1 | [Proposal](https://github.com/UBC-MDS/CorrR/blob/master/docs/proposal.md)|
-|Milestone 3 | [Release](!)|
