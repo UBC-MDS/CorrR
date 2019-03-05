@@ -1,5 +1,7 @@
 <img src="docs/CorrR.png" align="right" height="190" width="290"/>
 
+[![Build Status](https://travis-ci.org/UBC-MDS/CorrR.svg?branch=master)](https://travis-ci.org/UBC-MDS/CorrR)
+
 # CorrR
 
 Latest Update Date: 2019 Feb.
