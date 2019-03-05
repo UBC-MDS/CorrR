@@ -24,18 +24,8 @@ cov_mx <- function(x){
   if(!(is.numeric(x) || is.logical(x))) stop("'x' must be numeric.")
   stopifnot(is.atomic(x))
 
-   # return ERROR if the inputs are empty
-  if(length(x) == 0L){
-    stop("'x' must be non-empty.")
-  }
-
   # return NA if The length of input equal to 1
-  else if (length(x) == 1L){
-    return (NA)
-  }
-
-  # return NA if matrix is not 2D
-  if (length(dim(x)) != 2){
+  if (length(x) == 1L){
     return (NA)
   }
 
@@ -43,12 +33,12 @@ cov_mx <- function(x){
     return (NA)
   }
 
-  #remove the rows that missing value or finite are present
+  # remove the rows that missing value or finite are present
   z <- x[!rowSums(!is.finite(x)), ]
-  z <- na.omit(z)
+  z <- stats::na.omit(z)
 
   # check if the matrix is empty after removing inf and nan
-  if (is.null(z)){
+  if (!length(z)){
     stop("Input cannot be empty.")
   }
 

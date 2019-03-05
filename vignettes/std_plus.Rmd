@@ -1,0 +1,43 @@
+---
+title: "std_plus"
+author: "Vignette Author"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Overview
+
+This package is developed to help users calculate correlation coefficients and covariance matrix of a given data with missing values. In order to implement correlation coefficients and covariance matrix, the standard deviation of the data is needed however the world of data is not always clean and tidy. `base` R fails to return standard deviation and calculation of the correlation coefficients when the data has missing values. This package aims to overcome this obstacle and help users handle missing values when calculating correlation coefficients and covariance matrix. `CorrR` uses likewise deletion method to handle missing values: removing the rows of a data frame where the missing values are present.
+
+# Standard Deviation (`std_plus`)
+
+Standard deviation calculates how close the data points to the mean, in which an insight for the variation of the data points. This function would automatically handle the missing values in the input.
+
+$$s = \sqrt{\frac{\sum(x-\overline{x})^2}{n-1}}$$
+
+# Function 
+
+`std_plus` function calculates the standard deviation of the values in a numeric vector. It is capable of computing
+standard deviation when the vector contains missing values and inifinite values by automatically removing them.
+
+- INPUT
+    - x (numeric) a numeric vector
+  
+- OUTPUT 
+    - the value of standard deviation of the input data
+  
+- EXAMPLE
+    - std_plus(c(1,2,3,4,5))
+  
+  

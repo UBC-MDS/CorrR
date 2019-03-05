@@ -6,19 +6,26 @@ test_that("Test valid data format",{
   multi_x <- c(1,2,3,4,5)
   multi_y <- c(6,7,8,9,10)
   multi_y_plus <- c(6,7,8,9,10,11)
-  mix_type_x <-  c(1,"2",3,4,5)
+  mix_type_x <-  c(1,"k",3,4,5)
   mix_type_y <-  c(1,2,3+2i,4,5)
 
   # return ERROR if the input is not a vector
   expect_error(corr_plus(1,2,3,4))
+  # expect ERROR if the input are NULL
+  expect_error(corr_plus(NULL, NULL))
+  # return ERROR if the input are empty
+  expect_error(corr_plus(c(),c()))
   # expect ERROR if the input are not numeric
   expect_error(corr_plus(mix_type_x, mix_type_y))
+  expect_error(corr_plus(multi_x, mix_type_y))
   # expect ERROR if the length of two vectors are different
   expect_error(corr_plus(mix_type_x, multi_y_plus))
   # expect NA if the length of both vectors are one
   expect_true(is.na(corr_plus(single_x, single_y)))
   # expect TRUE if the length of the output is one
   expect_length(corr_plus(multi_x, multi_y), 1)
+  # return ERROR if the incompatible dimensions
+  expect_error(corr_plus(multi_x,multi_y_plus))
 })
 
 test_that("Test the correctness of corr_plus",{
