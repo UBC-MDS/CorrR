@@ -20,6 +20,7 @@ cov_mx <- function(x){
     stop("Input cannot be empty.")
   }
 
+
   # the input data should be numeric
   if(!(is.numeric(x) || is.logical(x))) stop("'x' must be numeric.")
   stopifnot(is.atomic(x))
@@ -29,9 +30,19 @@ cov_mx <- function(x){
     return (NA)
   }
 
-  if (dim(x)[1] == 1 | dim(x)[2] == 1){
-    return (NA)
-  }
+# if (dim(x)[1] == 1 | dim(x)[2] == 1){
+#   return (NA)
+# }
+
+  tryCatch(
+    {
+      x[2, 2]
+    },
+    error = function(error_message){
+      message("Length of input should be > 1")
+      message(error_message)
+    }
+  )
 
   # remove the rows that missing value or finite are present
   z <- x[!rowSums(!is.finite(x)), ]
