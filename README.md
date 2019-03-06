@@ -4,7 +4,7 @@
 
 # CorrR
 
-Latest Update Date: 2019 Feb.
+Latest Update Date: 2019 Feb
 
 # Overview
 

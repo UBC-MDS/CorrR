@@ -16,9 +16,22 @@
 cov_mx <- function(x){
 
   # check whether input vectors are valid or not
-  if(is.null(x)){
-    stop("Input cannot be empty.")
-  }
+  #if(is.null(x)){
+  #   stop("Input cannot be empty.")
+  #  }
+
+  # check whether input vector are valid or not
+  tryCatch(
+    {
+      sample(x,1)
+    },
+    error=function(error_message) {
+      message("'x' cannot be empty")
+      message(error_message)
+    }
+  )
+
+
 
 
   # the input data should be numeric
