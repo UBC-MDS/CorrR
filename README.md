@@ -1,30 +1,64 @@
 <img src="docs/CorrR.png" align="right" height="190" width="290"/>
 
+[![Build Status](https://travis-ci.org/UBC-MDS/CorrR.svg?branch=master)](https://travis-ci.org/UBC-MDS/CorrR)
+
 # CorrR
 
 Latest Update Date: 2019 Feb
 
 # Overview
 
-This project is developed to help users calculate correlation coefficients and covariance matrix of a given data with missing values in both R and Python.
+This project is developed to help users calculate standard deviation, correlation coefficients and covariance matrix of a given data with missing values in both R and Python.
 
 - [Python Version Link](https://github.com/UBC-MDS/CorrPy)
 - [R Version Link](https://github.com/UBC-MDS/CorrR)
 
 # Team
 
-| Name  | Slack Handle | Github.com | Link |
+| Name  | Slack Handle | Github.com | Project branch |
 | :------: | :---: | :----------: | :---: |
-| KERA YUCEL | `@KERA YUCEL` | `@K3ra-y` | [Kera's link](https://github.com/K3ra-y/CorrR)|
-| GOPALAKRISHNAN ANDIVEL | `@Krish` | `@Gopsathvik` | [Krish's link](https://github.com/Gopsathvik/CorrR)|
-| WEISHUN DENG | `@Wilson Deng` | `@xiaoweideng` | [Wilson's link](https://github.com/xiaoweideng/CorrR)|
-| Mengda Yu | `@Mengda(Albert) Yu` | `@mru4913` | [Albert's link](https://github.com/mru4913/CorrR) |
+| KERA YUCEL | `@KERA YUCEL` | [`@K3ra-y`](https://github.com/K3ra-y) | [Kera's link](https://github.com/UBC-MDS/CorrR/tree/Kera)|
+| GOPALAKRISHNAN ANDIVEL | `@Krish` | [`@Gopsathvik`](https://github.com/GopsathvikM) | [Krish's link](https://github.com/UBC-MDS/CorrR/tree/krish)|
+| WEISHUN DENG | `@Wilson Deng` | [`@xiaoweideng`](https://github.com/xiaoweideng) | [Wilson's link](https://github.com/UBC-MDS/CorrR/tree/wilso)|
+| Mengda Yu | `@Mengda(Albert) Yu` | [`@mru4913`](https://github.com/mru4913) | [Albert's link](https://github.com/UBC-MDS/CorrR/tree/Albert) |
 
 ## Installation
 
 `CorrR` can be installed in a R command window:
 
-`devtools::install_github("CorrR")`
+`devtools::install_github("UBC-MDS/CorrR")`
+
+## Branch Coverage Test
+
+To test branch coverage, we use `covr` package. You can install by `install.packages("covr")`.
+
+You can double click the project and include the following in the command.
+
+```R
+library(covr)
+
+report()
+```
+
+The results are shown below.
+
+![alt text](./docs/branch_covr.png)
+
+## Executing `test_that` tests in `CorrR`
+
+To test the test coverage, we use `devtools` package. Installation of this package can be done by `install.packages("devtools")`.
+
+You can open the `CorrR` R project and execute the following code.
+
+```R
+library(devtools)
+load_all()
+test()
+```
+
+The results are shown below.
+
+![alt text](./docs/test.jpg)
 
 ## Functions
 
@@ -43,6 +77,13 @@ Standard deviation calculates how close the data points to the mean, in which an
 ### *Example*:
 
 ```R
+> x <-  c(1,2, NA, 4, NA, 6)
+> std_plus(x)
+[1] 2.217356
+
+> y <-  c(1,2, Inf, 4, NA, 6)
+> std_plus(y)
+[1] 2.217356
 ```
 
 
@@ -60,6 +101,10 @@ Correlation coefficients calculates the relationship between two variables as we
 ### *Example*:
 
 ```R
+> x <-  c(1, 2, NA, 4, 5)
+> y <-  c(-6, -7, -8, 9, TRUE)
+> corr_plus(x, y)
+[1] 0.7391091
 ```
 
 
@@ -83,6 +128,11 @@ A covariance matrix displays the variance and covariance together. The diagonal 
 ### *Example*:
 
 ```R
+> foo_matrix <- matrix(c(1, 2, NA, 4, 5, -6, -7, -8, 9, TRUE), 5)
+> cov_mx(foo_matrix)
+          [,1]     [,2]
+[1,]  3.333333 10.00000
+[2,] 10.000000 54.91667
 ```
 
 ### How does `CorrR` package fits into the R ecosystem?
@@ -103,3 +153,5 @@ Following functions are already present in R ecosystem. However, missing values 
 | Milestone | Tasks |
 |---|---|
 |Milestone 1 | [Proposal](https://github.com/UBC-MDS/CorrR/blob/master/docs/proposal.md)|
+|Milestone 2 | [Python package (`CorrPy`) is complete](https://github.com/UBC-MDS/CorrPy)|
+|Milestone 3 | [R package (`CorrR`) is complete](https://github.com/UBC-MDS/CorrR)|

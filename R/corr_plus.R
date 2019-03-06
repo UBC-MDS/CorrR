@@ -9,24 +9,31 @@
 #' @param x a numeric vector
 #' @param y a numeric vector
 #'
-#' @return the value of standard deviation of the input data
+#' @return the value of Pearson correlation coefficient value of the input data
 #' @export
 #'
 #' @examples corr_plus(c(1,2,3,4,5), c(1,2,3,NA,5))
 corr_plus <- function(x, y){
 
   # check whether input vectors are valid or not
-  if(is.null(x) || is.null(y)){
-    stop("Supply both 'x' and 'y'")
-  }
+  tryCatch(
+    {
+      sample(x,1)
+      sample(y,1)
+    },
+    error=function(error_message) {
+      message("Supply both 'x' and 'y'")
+      message("Both 'x' and 'y' cannot be empty")
+      message(error_message)
+    }
+  )
+
+
   if(!(is.numeric(x) || is.logical(x))) stop("'x' must be numeric") # the input data should be numeric
   stopifnot(is.atomic(x))
   if(!(is.numeric(y) || is.logical(y))) stop("'y' must be numeric") # the input data should be numeric
   stopifnot(is.atomic(y))
-  if(length(x) == 0L || length(y) == 0L){ # return ERROR if the inputs are empty
-    stop("both 'x' and 'y' must be non-empty")
-  }
-  else if (length(x) == 1L || length(y) == 1L){ # return NA if The length of input equal to 1
+  if (length(x) == 1L || length(y) == 1L){ # return NA if The length of input equal to 1
     return (NA)
   }
   if (length(x) != length(y)){

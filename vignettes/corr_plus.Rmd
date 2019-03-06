@@ -1,0 +1,44 @@
+---
+title: "corr_plus"
+author: "Vignette Author"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+# Overview
+
+This package is developed to help users calculate correlation coefficients and covariance matrix of a given data with missing values. In order to implement correlation coefficients and covariance matrix, the standard deviation of the data is needed however the world of data is not always clean and tidy. `base` R fails to return standard deviation and calculation of the correlation coefficients when the data has missing values. This package aims to overcome this obstacle and help users handle missing values when calculating correlation coefficients and covariance matrix. `CorrR` uses likewise deletion method to handle missing values: removing the rows of a data frame where the missing values are present.
+
+# Correlation Coefficients (`corr_plus`)
+
+Correlation coefficients calculates the relationship between two variables as well as the magnitude of this relationship. This function would automatically handle the missing values in the input. 
+
+$$r = \frac{1}{n-1}(\frac{\sum(x-\overline{x})(y-\overline{y})}{s_{x}s_{y}})$$
+
+# Function 
+
+`corr_plus` function calculates the Pearson correlation coefficient between two variables using complete case analysis that excludes all observations that have NA for at least one variable.
+
+- INPUT
+    - x (numeric) a numeric vector
+    - y (numeric) a numeric vector
+  
+- OUTPUT 
+    - the value of Pearson correlation coefficient value of the input data
+  
+- EXAMPLE
+    - corr_plus(c(1,2,3,4,5), c(1,2,3,NA,5))
+  
+  

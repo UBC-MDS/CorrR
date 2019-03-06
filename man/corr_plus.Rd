@@ -12,7 +12,7 @@ corr_plus(x, y)
 \item{y}{a numeric vector}
 }
 \value{
-the value of standard deviation of the input data
+the value of Pearson correlation coefficient value of the input data
 }
 \description{
 `corr_plus` function calculates the Pearson correlation coefficient between
