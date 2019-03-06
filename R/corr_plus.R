@@ -16,9 +16,19 @@
 corr_plus <- function(x, y){
 
   # check whether input vectors are valid or not
-  if(is.null(x) || is.null(y)){
-    stop("Supply both 'x' and 'y'")
-  }
+  tryCatch(
+    {
+      sample(x,1)
+      sample(y,1)
+    },
+    error=function(error_message) {
+      message("Supply both 'x' and 'y'")
+      message("Both 'x' and 'y' cannot be empty")
+      message(error_message)
+    }
+  )
+
+
   if(!(is.numeric(x) || is.logical(x))) stop("'x' must be numeric") # the input data should be numeric
   stopifnot(is.atomic(x))
   if(!(is.numeric(y) || is.logical(y))) stop("'y' must be numeric") # the input data should be numeric
