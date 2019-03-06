@@ -14,10 +14,18 @@
 #' @examples std_plus(c(1,2,3,NA,5))
 std_plus <- function(x) {
 
-  # check whether a input vector is valid
-  if(is.null(x)){# The input vector cannot be null
-    stop("The input cannot be empty")
-  }
+  # check whether input vector are valid or not
+  tryCatch(
+    {
+      sample(x,1)
+    },
+    error=function(error_message) {
+      message("'x' cannot be empty")
+      message(error_message)
+    }
+  )
+
+
   if(!(is.numeric(x) || is.logical(x))){ # the input data should be numeric
     return (NA)
   }
