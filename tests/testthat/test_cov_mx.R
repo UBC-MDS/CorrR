@@ -8,7 +8,7 @@ test_that("Test valid data format",{
   char_x <- as.character(x)
 
   # expect NA if we have a single row in the input matrix
-  expect_true(is.na(cov_mx(single_row_x)))
+  expect_error(cov_mx(single_row_x))
   expect_true(is.na(cov_mx(matrix(c(1)))))
   # expect the covariance matrix has the same number of rows as the number of features of input matrix
   expect_equal(dim(cov_mx(x))[1], ncols)
