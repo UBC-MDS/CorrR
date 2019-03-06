@@ -16,9 +16,23 @@
 cov_mx <- function(x){
 
   # check whether input vectors are valid or not
-  if(is.null(x)){
-    stop("Input cannot be empty.")
-  }
+  #if(is.null(x)){
+  #   stop("Input cannot be empty.")
+  #  }
+
+  # check whether input vector are valid or not
+  tryCatch(
+    {
+      sample(x,1)
+    },
+    error=function(error_message) {
+      message("'x' cannot be empty")
+      message(error_message)
+    }
+  )
+
+
+
 
   # the input data should be numeric
   if(!(is.numeric(x) || is.logical(x))) stop("'x' must be numeric.")
@@ -29,9 +43,19 @@ cov_mx <- function(x){
     return (NA)
   }
 
-  if (dim(x)[1] == 1 | dim(x)[2] == 1){
-    return (NA)
-  }
+# if (dim(x)[1] == 1 | dim(x)[2] == 1){
+#   return (NA)
+# }
+
+  tryCatch(
+    {
+      x[2, 2]
+    },
+    error = function(error_message){
+      message("Length of input should be > 1")
+      message(error_message)
+    }
+  )
 
   # remove the rows that missing value or finite are present
   z <- x[!rowSums(!is.finite(x)), ]
