@@ -6,17 +6,17 @@
 \alias{CorrR-package}
 \title{CorrR: A package for calculating correlation coefficients and covariance matrix}
 \description{
-A R package that calculates correlation coefficients and covariance matrix of a given data with missing values. 
+A R package that calculates correlation coefficients and covariance matrix of a given data with missing values.
              The package contains std_plus, corr_plus and cov_mx.
 }
 \author{
-\strong{Maintainer}: YUCEL KERA \email{xxxx@gmail.com}
+\strong{Maintainer}: YUCEL KERA \email{yucel.kera@gmail.com}
 
 Authors:
 \itemize{
-  \item ANDIVEL GOPALAKRISHNAN \email{xxxx@gmail.com}
-  \item DENG WEISHUN \email{xxxx@gmail.com}
-  \item MENGDA YU \email{xxxx@gmail.com}
+  \item ANDIVEL GOPALAKRISHNAN \email{gopsathvik@gmail.com}
+  \item DENG WEISHUN \email{dengweishun@hotmail.com}
+  \item MENGDA YU \email{albert@gmail.com}
 }
 
 }
